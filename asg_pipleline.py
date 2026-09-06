@@ -1,21 +1,3 @@
-"""
-ASG Airlines: End-to-End Data Engineering Pipeline (Local, no Azure)
-Ingests -> Cleans -> Transforms -> Models (Star Schema) -> Exports for Power BI
-
-Fixes applied vs. v1:
-  1. Masked passport_number / emergency_contact_phone are now actually
-     carried into fact_booking_payments (previously computed then dropped).
-  2. emergency_contact_name (a real name = PII) is dropped from all exports.
-  3. Bookings with zero payment records (363/1000) are now explicitly
-     flagged via payment_status, instead of silently becoming NaN.
-  4. All pipeline counts (dupes removed, imputed, quarantined, revenue
-     overstatement, payment coverage, etc.) are exported to
-     gold/pipeline_summary.csv so they can drive Power BI KPI cards
-     directly instead of being retyped by hand from console output.
-  5. Logging + try/except replace bare print statements per the case
-     study's "error handling and logging" requirement.
-  6. Removed the unused 'final' output folder.
-"""
 
 import pandas as pd
 import numpy as np
