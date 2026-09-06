@@ -1,0 +1,2 @@
+flight_id,airline,source,destination,departure_time,arrival_time,duration,_ingested_at,duration_minutes,is_overnight,_quarantine_reason
+SJ192,SpiceJet,HYD,BOM,2026-04-19 18:45:42,2026-04-18 23:45:42,1899-12-29 05:00:00,2026-09-06 14:06:52.633493,-1140.0,False,Negative duration (inverted timestamps)
